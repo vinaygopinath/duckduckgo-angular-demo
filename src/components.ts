@@ -7,5 +7,6 @@ export function attachComponents(app) {
   .component('search', new SearchComponent())
   .component('history', new HistoryComponent())
   .component('disambiguationList', new DisambiguationListComponent())
-  .component('disambiguation', new DisambiguationComponent());
+  .component('disambiguation', new DisambiguationComponent())
+  .component('resultList', new ResultListComponent());
 }

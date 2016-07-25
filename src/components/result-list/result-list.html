@@ -1,0 +1,15 @@
+<div class="result-list-component" layout="column">
+  <md-list flex ng-if="vm.items && vm.items.length > 0">
+    <md-list-item class="md-2-line" ng-repeat="item in vm.items" ng-click="null">
+      <div class="md-list-item-text">
+        <h3>{{item.heading}}</h3>
+        <p>{{item.description}}</p>
+      </div>
+    </md-list-item>
+  </md-list>
+  <div layout="column" layout-align="center center" ng-if="!vm.items || vm.items.length === 0">
+    <h3>No results found</h3>
+    <p class="md-subhead">DuckDuckGo Instant Answer API does not provide search results</p>
+    <span class="md-caption">Consider modifying your query by adding or removing a keyword</span>
+  </div>
+</div>
