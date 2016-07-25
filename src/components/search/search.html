@@ -1,0 +1,11 @@
+<div class="search-component">
+  <form ng-submit="vm.onFormSubmitted(vm.query)" >
+    <md-autocomplete md-input-id="autocomplete" ng-disabled="false" md-no-cache="false" md-autofocus="true" md-delay="150" ng-model-options = "{ debounce: 150 }" md-search-text-change="vm.search(vm.query)" md-selected-item="vm.selectedItem"  md-selected-item-change="vm.onSuggestionSelected(item)" md-search-text="vm.query" md-items="item in vm.getSuggestions(vm.query)" md-item-text="item" md-min-length="3" placeholder="What would you like to know?">
+      <md-item-template ng-hide="true">
+        <span md-highlight-text="vm.query" md-highlight-flags="^i">{{item}}</span>
+      </md-item-template>
+    </md-autocomplete>
+  </form>
+  <disambiguation-list ng-if="vm.query" items="vm.disambiguations"></disambiguation-list>
+  <result-list ng-if="vm.query" items="vm.results"></result-list>
+</div>
