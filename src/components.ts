@@ -6,5 +6,6 @@ export function attachComponents(app) {
   .component('app', new AppComponent())
   .component('search', new SearchComponent())
   .component('history', new HistoryComponent())
-  .component('disambiguationList', new DisambiguationListComponent());
+  .component('disambiguationList', new DisambiguationListComponent())
+  .component('disambiguation', new DisambiguationComponent());
 }
