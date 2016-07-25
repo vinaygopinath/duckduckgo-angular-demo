@@ -1,0 +1,18 @@
+<md-content layout-padding>
+  <h2>Search History</h2>
+  <div ng-if="vm.log && vm.log.length > 0">
+    <span>Only the most recent 100 items are stored</span>
+    <md-list flex>
+      <md-list-item class="md-2-line" ng-repeat="item in vm.log track by $index" ng-click="null">
+        <div class="md-list-item-text">
+          <h3>{{item.query}}</h3>
+          <p am-time-ago="item.timestamp"></p>
+        </div>
+      </md-list-item>
+    </md-list>
+  </div>
+  <div ng-if="!vm.log || vm.log.length === 0">
+    <span>Your search history is empty</span>
+    <p>Do you want to <a ng-href="#/search">perform a search?</a></p>
+  </div>
+</md-content>
