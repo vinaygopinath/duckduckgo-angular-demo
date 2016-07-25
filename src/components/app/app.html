@@ -1,0 +1,36 @@
+<div class="app-component">
+  <md-content>
+    <md-toolbar hide-gt-md>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.toggleMenu()">
+          <md-icon aria-label="menu" class="material-icons">menu</md-icon>
+        </md-button>
+        <h2>
+          <span>DuckDuckGo Demo</span>
+        </h2>
+      </div>
+    </md-toolbar>
+  </md-content>
+  <div class="main-content" layout="row" flex layout-stretch>
+    <md-sidenav class="md-sidenav-left" md-component-id="left-sidenav" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop md-whiteframe="4">
+      <md-toolbar class="md-theme-indigo">
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.toggleMenu()" hide-gt-md>
+            <md-icon aria-label="menu" class="material-icons">navigate_before</md-icon>
+          </md-button>
+          <a ng-href="#/search">
+            <h1 class="md-toolbar-tools"><md-icon aria-label="home" class="material-icons home-icon">home</md-icon> DuckDuckGo Demo</h1>
+          </a>
+        </div>
+      </md-toolbar>
+      <md-content layout-padding layout="row" layout-align="center center">
+        <a ng-href="#/history">
+          <md-button md-no-ink class="md-primary">View search history</md-button>
+        </a>
+      </md-content>
+    </md-sidenav>
+    <md-content flex layout-padding>
+      <div ng-view></div>
+    </md-content>
+  </div>
+</div>
